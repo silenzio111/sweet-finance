@@ -18,30 +18,19 @@
 <body>
   <header class="hero">
     <div class="wrap">
-      <nav><span class="brand">SweetFinance</span><a class="navlink" href="https://github.com/silenzio111/sweet-finance">GitHub ↗</a></nav>
-      <p class="eyebrow">Personal finance, kept personal</p>
+      <nav><span class="brand">SweetFinance</span><a class="navlink" href="https://github.com/silenzio111/sweet-finance">GitHub 源码 ↗</a></nav>
+      <p class="eyebrow">本地优先的个人账本</p>
       <h1>把钱花在哪，<br>一眼就清楚。</h1>
       <p class="lede">一个以手机体验为中心的本地记账本。收入、支出、储蓄和年度目标各得其所，不把你的账本变成一张无尽的表格。</p>
       <div class="actions"><a class="button primary" href="https://github.com/silenzio111/sweet-finance">查看源代码</a><a class="button" href="#features">了解功能</a></div>
     </div>
   </header>
   <main class="wrap">
-    <section id="features" class="intro"><h2>为持续记录而做，而非只做一次报表。</h2><p class="muted">SweetFinance 把常用动作收进清爽的移动界面，同时保留分类、年度、历史记录与备份这些真正长期需要的能力。</p></section>
-    <section class="grid">
-      <article class="card"><h3>全年一张账本</h3><p>按年份维护收入、支出和储蓄项目，随时切换视图查看当下或回顾全年。</p></article>
-      <article class="card"><h3>账目也能合你习惯</h3><p>自定义分类、项目与卡片排序；精简模式和明细模式各自服务不同的查看场景。</p></article>
-      <article class="card"><h3>改错也安心</h3><p>调整历史、撤销/重做和明确的操作确认，减少误操作带来的焦虑。</p></article>
-      <article class="card"><h3>本地优先</h3><p>数据默认留在设备上；只有你主动执行时才会导入、导出或创建备份。</p></article>
-      <article class="card"><h3>看得懂的指标</h3><p>自动汇总净结余、储蓄率、支出占比和分类统计，也支持汇率管理。</p></article>
-      <article class="card"><h3>Web 到 Android</h3><p>React/Vite Web 应用配合 Capacitor Android 封装，方便在不同设备上继续迭代。</p></article>
-    </section>
-    <section class="banner">
-      <div><h2>自己的数据，自己带走。</h2><p class="muted">导出的备份由你保管，恢复也由你发起。没有账户体系，没有广告追踪，也没有把日常消费记录交给云端的必要。</p></div>
-      <div class="facts"><div class="fact"><strong>React</strong><span>界面层</span></div><div class="fact"><strong>Capacitor</strong><span>Android 封装</span></div><div class="fact"><strong>本地存储</strong><span>数据优先级</span></div><div class="fact"><strong>MIT</strong><span>开源许可</span></div></div>
-    </section>
-    <section><h2>从源码开始</h2><p class="muted">安装 Node.js 20+ 后，运行 <code>npm install</code> 和 <code>npm run dev</code>。完整的构建与 Android 指引在仓库 README 中。</p></section>
+    <section id="features" class="intro"><h2>研发的起点，是对“坚持记账”这件事的重新理解。</h2><p class="muted">许多记账工具把重点放在复杂报表、账户体系或云端同步上，但日常真正让人放弃的，往往是录入动作太重，以及打开应用后看不到与自己有关的答案。SweetFinance 从一个更朴素的问题出发：今天的收入、固定支出、临时消费和正在积累的储蓄，能否在一块不会令人紧张的界面里被看清楚。</p><p class="muted">因此它没有把“功能越多”当作目标，而是围绕连续使用的节奏设计。精简视图适合快速确认本月状态，明细视图则留给想理解分类和项目的人；年度切换不是为了做形式化的报表，而是让一套账本能够自然地跨过新年、工资调整或生活阶段的变化。</p></section>
+    <section class="intro"><h2>账本不是一张表，而是一组会变化的关系。</h2><p class="muted">在数据模型上，SweetFinance 将收入、支出、储蓄、分类、年度和调整记录分开维护，再在界面层汇总为净结余、储蓄率、支出占比与分类统计。这样做的原因是现实中的记账并不稳定：类别会改名，项目会停用，金额会被修正，使用者也会逐渐形成自己的浏览顺序。把这些变化视为一等需求，比强迫用户适应一张固定表格更可靠。</p><p class="muted">撤销、重做、调整历史和明确的确认界面也是同一思路的一部分。财务记录的错误通常不是技术错误，而是匆忙录入、误删或记忆改变。应用不假装用户永远不会出错，而是保留能回看和纠正的路径，让账本成为可维护的个人记录，而不是一次写错就令人不敢触碰的档案。</p></section>
+    <section class="intro"><h2>技术选型服务于移动体验与长期可维护性。</h2><p class="muted">界面采用 React 构建，以组件和状态 Hook 拆分账目、分类、视图切换、对话框与操作历史。Vite 负责本地开发与生产构建，使 Web 端保持快速迭代；Tailwind 让间距、字号和不同尺寸屏幕上的布局规则集中在样式层，而不是散落在大量专用页面中。</p><p class="muted">同一套前端再通过 Capacitor 封装为 Android 应用。选择这种方式并非把手机端当作浏览器的附属品，而是希望数据逻辑、交互和视觉语言保持一致，同时仍能接入原生文件导入导出与 SQLite 存储能力。Web 环境可以使用本地浏览器存储，Android 端则可以把数据落在设备数据库中；两种路径都把数据控制权留在使用者手里。</p></section>
+    <section class="intro"><h2>隐私和备份不是附加功能，而是产品边界。</h2><p class="muted">SweetFinance 不要求注册账户，也不以广告分析为前提。账本默认保存在设备本地，导出、导入和数据库备份都由用户主动发起。这样的边界会牺牲一些“自动同步”的便利，却避免把日常消费、收入和储蓄目标变成另一项被收集、分析和转卖的数据资产。</p><p class="muted">项目目前适合希望从源码运行、二次开发或自行打包 Android 版本的使用者。安装 Node.js 20 或更高版本后，执行 <code>npm install</code> 和 <code>npm run dev</code> 即可开始开发；完整构建与移动端同步流程写在仓库 README 中。开源并不承诺每个人都要以相同方式记账，它更希望这套工具能够被改造成适合不同生活方式的账本。</p></section>
   </main>
-  <footer class="wrap">SweetFinance · MIT License · 本页为静态项目介绍</footer>
+  <footer class="wrap">SweetFinance · MIT 开源许可 · 本页为静态项目介绍</footer>
 </body>
 </html>
-
