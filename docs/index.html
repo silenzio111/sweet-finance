@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SweetFinance：以手机体验为中心的本地记账应用。">
+  <title>SweetFinance · 轻盈地掌握每一笔钱</title>
+  <style>
+    :root { --ink:#17213a; --muted:#697386; --paper:#f7f9fc; --line:#e3e8ef; --accent:#1b9c6a; --dark:#10241f; }
+    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif; }
+    .wrap { width:min(1100px,calc(100% - 40px)); margin:auto; } nav { display:flex; justify-content:space-between; align-items:center; padding:25px 0; } .brand { font-weight:800; letter-spacing:-.03em; } a { color:inherit; } .navlink { color:var(--muted); text-decoration:none; font-size:.94rem; }
+    .hero { color:white; background:radial-gradient(circle at 82% 20%,#49c891 0,transparent 27%),linear-gradient(135deg,#10241f,#183f32); padding:74px 0 82px; overflow:hidden; } .eyebrow { color:#9ae4bc; text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:800; } h1 { max-width:750px; margin:12px 0 18px; font-size:clamp(2.7rem,8vw,5.5rem); line-height:1.03; letter-spacing:-.065em; } .lede { max-width:590px; margin:0; color:#d1e6dc; font-size:1.17rem; } .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; } .button { display:inline-block; padding:11px 17px; border:1px solid rgba(255,255,255,.35); border-radius:999px; text-decoration:none; font-weight:700; } .button.primary { background:white; color:var(--dark); border-color:white; }
+    main { padding:64px 0; } .intro { max-width:720px; margin-bottom:35px; } h2 { margin:0 0 10px; font-size:1.85rem; letter-spacing:-.04em; } .muted { color:var(--muted); } .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; } .card { padding:23px; border:1px solid var(--line); border-radius:18px; background:white; } .card h3 { margin:0 0 7px; font-size:1.03rem; } .card p { margin:0; color:var(--muted); font-size:.94rem; }
+    .banner { display:grid; grid-template-columns:1.25fr .75fr; gap:25px; align-items:center; margin:52px 0; padding:30px; border-radius:22px; background:#e6f5ec; } .facts { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; } .fact { padding:15px; border-radius:14px; background:white; } .fact strong { display:block; font-size:1.2rem; } .fact span { color:var(--muted); font-size:.83rem; } code { padding:2px 5px; border-radius:5px; background:#eef1f5; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; } footer { padding:30px 0 45px; color:var(--muted); font-size:.88rem; }
+    @media (max-width:700px) { .grid,.banner { grid-template-columns:1fr; } nav { padding:19px 0; } .hero { padding:55px 0 62px; } main { padding:45px 0; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav><span class="brand">SweetFinance</span><a class="navlink" href="https://github.com/silenzio111/sweet-finance">GitHub ↗</a></nav>
+      <p class="eyebrow">Personal finance, kept personal</p>
+      <h1>把钱花在哪，<br>一眼就清楚。</h1>
+      <p class="lede">一个以手机体验为中心的本地记账本。收入、支出、储蓄和年度目标各得其所，不把你的账本变成一张无尽的表格。</p>
+      <div class="actions"><a class="button primary" href="https://github.com/silenzio111/sweet-finance">查看源代码</a><a class="button" href="#features">了解功能</a></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="features" class="intro"><h2>为持续记录而做，而非只做一次报表。</h2><p class="muted">SweetFinance 把常用动作收进清爽的移动界面，同时保留分类、年度、历史记录与备份这些真正长期需要的能力。</p></section>
+    <section class="grid">
+      <article class="card"><h3>全年一张账本</h3><p>按年份维护收入、支出和储蓄项目，随时切换视图查看当下或回顾全年。</p></article>
+      <article class="card"><h3>账目也能合你习惯</h3><p>自定义分类、项目与卡片排序；精简模式和明细模式各自服务不同的查看场景。</p></article>
+      <article class="card"><h3>改错也安心</h3><p>调整历史、撤销/重做和明确的操作确认，减少误操作带来的焦虑。</p></article>
+      <article class="card"><h3>本地优先</h3><p>数据默认留在设备上；只有你主动执行时才会导入、导出或创建备份。</p></article>
+      <article class="card"><h3>看得懂的指标</h3><p>自动汇总净结余、储蓄率、支出占比和分类统计，也支持汇率管理。</p></article>
+      <article class="card"><h3>Web 到 Android</h3><p>React/Vite Web 应用配合 Capacitor Android 封装，方便在不同设备上继续迭代。</p></article>
+    </section>
+    <section class="banner">
+      <div><h2>自己的数据，自己带走。</h2><p class="muted">导出的备份由你保管，恢复也由你发起。没有账户体系，没有广告追踪，也没有把日常消费记录交给云端的必要。</p></div>
+      <div class="facts"><div class="fact"><strong>React</strong><span>界面层</span></div><div class="fact"><strong>Capacitor</strong><span>Android 封装</span></div><div class="fact"><strong>本地存储</strong><span>数据优先级</span></div><div class="fact"><strong>MIT</strong><span>开源许可</span></div></div>
+    </section>
+    <section><h2>从源码开始</h2><p class="muted">安装 Node.js 20+ 后，运行 <code>npm install</code> 和 <code>npm run dev</code>。完整的构建与 Android 指引在仓库 README 中。</p></section>
+  </main>
+  <footer class="wrap">SweetFinance · MIT License · 本页为静态项目介绍</footer>
+</body>
+</html>
+

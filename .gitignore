@@ -1,0 +1,17 @@
+# Dependencies and generated web output
+node_modules/
+dist/
+
+# Capacitor / Android build output
+android/.gradle/
+android/build/
+android/**/build/
+*.apk
+*.aab
+
+# Local configuration and operating-system files
+.env
+.env.*
+!.env.example
+.DS_Store
+

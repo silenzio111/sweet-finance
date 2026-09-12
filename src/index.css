@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro Rounded", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #E5E5EA;
+  }
+}
+
+/* Custom scrollbar matching iOS native invisible style */
+.custom-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Safari & Chrome */
+  width: 0;
+  height: 0;
+}
+
+/* Apple iOS Spring-like Tab Transition */
+@keyframes iosFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tab-content {
+  animation: iosFadeIn 0.28s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+/* Apple Card Ambient Glow */
+@keyframes appleGlowGreen {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes appleGlowRed {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+}
+
+.animate-glow-emerald {
+  animation: appleGlowGreen 4.5s ease-in-out infinite;
+}
+
+.animate-glow-rose {
+  animation: appleGlowRed 5s ease-in-out infinite;
+}
+
+/* Apple Silk Shimmer Effect */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  35%, 100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+.shimmer-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  animation: shimmerSweep 6s cubic-bezier(0.32, 0.72, 0, 1) infinite;
+  pointer-events: none;
+}
+
+/* Apple Drawers Slide In Animations */
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideRight {
+  animation: slideRight 0.32s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.32s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+@keyframes undoFeedbackEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(2px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes undoFeedbackIcon {
+  0% {
+    opacity: 0;
+    transform: rotate(-100deg) scale(0.55);
+  }
+  65% {
+    opacity: 1;
+    transform: rotate(12deg) scale(1.16);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes undoButton {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  40% {
+    transform: rotate(-30deg) scale(1.14);
+  }
+  72% {
+    transform: rotate(10deg) scale(1.04);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes redoButton {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  40% {
+    transform: rotate(30deg) scale(1.14);
+  }
+  72% {
+    transform: rotate(-10deg) scale(1.04);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+.animate-undo-feedback {
+  animation: undoFeedbackEnter 0.46s cubic-bezier(0.22, 0.9, 0.28, 1) both;
+}
+
+.animate-undo-feedback-icon {
+  animation: undoFeedbackIcon 0.52s cubic-bezier(0.22, 0.9, 0.28, 1) both;
+}
+
+.animate-undo-button {
+  animation: undoButton 0.64s cubic-bezier(0.22, 0.9, 0.28, 1) both;
+}
+
+.animate-redo-button {
+  animation: redoButton 0.64s cubic-bezier(0.22, 0.9, 0.28, 1) both;
+}
+
+/* The settings slider scales the app's explicit Tailwind text sizes without changing card geometry. */
+.app-font-scale {
+  font-size: calc(16px * var(--app-font-scale, 1));
+}
+
+.app-font-scale .text-\[8px\] { font-size: calc(8px * var(--app-font-scale, 1)); }
+.app-font-scale .text-\[9px\] { font-size: calc(9px * var(--app-font-scale, 1)); }
+.app-font-scale .text-\[10px\] { font-size: calc(10px * var(--app-font-scale, 1)); }
+.app-font-scale .text-\[11px\] { font-size: calc(11px * var(--app-font-scale, 1)); }
+.app-font-scale .text-xs { font-size: calc(0.75rem * var(--app-font-scale, 1)); }
+.app-font-scale .text-sm { font-size: calc(0.875rem * var(--app-font-scale, 1)); }
+.app-font-scale .text-base { font-size: calc(1rem * var(--app-font-scale, 1)); }
+.app-font-scale .text-lg { font-size: calc(1.125rem * var(--app-font-scale, 1)); }
+.app-font-scale .text-xl { font-size: calc(1.25rem * var(--app-font-scale, 1)); }
+.app-font-scale .text-2xl { font-size: calc(1.5rem * var(--app-font-scale, 1)); }
+.app-font-scale .text-3xl { font-size: calc(1.875rem * var(--app-font-scale, 1)); }
+
+@media (min-width: 640px) {
+  .app-font-scale .sm\:text-xl { font-size: calc(1.25rem * var(--app-font-scale, 1)); }
+}
